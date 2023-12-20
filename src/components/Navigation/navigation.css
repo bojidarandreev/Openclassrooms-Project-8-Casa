@@ -1,0 +1,13 @@
+nav {
+    width: 100%;
+}
+
+nav ul {
+    width: 100%;
+    display: flex;
+    gap: 35px;
+}
+
+nav ul li {
+    list-style: none;
+}
