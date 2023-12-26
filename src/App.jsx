@@ -3,6 +3,7 @@ import Navigation from './components/Navigation/Navigation'
 
 import './App.css'
 import { Outlet } from 'react-router'
+import Carousel from './components/Carousel/Carousel'
 
 function App() {
 
@@ -10,7 +11,8 @@ function App() {
     <>
       <Navigation />
       <main>
-        <Outlet />
+        <Outlet />,
+        <Carousel />
       </main>
       <Footer />
     </>
