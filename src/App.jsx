@@ -4,7 +4,8 @@ import Navigation from './components/Navigation/Navigation'
 import './App.css'
 import { Outlet } from 'react-router'
 import Carousel from './components/Carousel/Carousel'
-import Dropdown from './components/Dropdown/Dropdown'
+import DropdownContainer from './components/Dropdown/Dropdown'
+import GetData from './components/GetData/GetData'
 
 
 function App() {
@@ -14,8 +15,9 @@ function App() {
       <Navigation />
       <main>
         <Outlet />,
-        <Carousel />,
-        <Dropdown />
+        {/* <Carousel />, */}
+        <DropdownContainer />,
+        <GetData />
       </main>
       <Footer />
     </>

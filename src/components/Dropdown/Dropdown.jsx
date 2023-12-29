@@ -51,73 +51,79 @@ import * as React from 'react';
 //  };
 
 // v3
-// export default function Dropdown() {
 
-// const options = [
+const Dropdown = ({ label, value, options, onChange }) => {
 
-//   { label: 'Fruit', value: 'fruit' },
+  return (
+  
+    <label>
+  
+      {label}
+  
+      <select value={value} onChange={onChange}>
+  
+        {options.map((option) => (
+  
+          <option key={option.value} value={option.value}>{option.label}</option>
+  
+        ))}
+  
+      </select>
+  
+    </label>
+  
+  );
+}
 
-//   { label: 'Vegetable', value: 'vegetable' },
+const DropdownContainer = () => {
 
-//   { label: 'Meat', value: 'meat' },
+const options = [
 
-// ];
+  { label: 'Fruit', value: 'fruit' },
 
-// const [value, setValue] = React.useState('fruit');
+  { label: 'Vegetable', value: 'vegetable' },
 
-// const handleChange = (event) => {
+  { label: 'Meat', value: 'meat' },
 
-//   setValue(event.target.value);
+];
 
-// };
+const [value, setValue] = React.useState('fruit');
 
-// return (
+const handleChange = (event) => {
 
-//   <div>
+  setValue(event.target.value);
 
-//     <Dropdown
-
-//       label="What do we eat?"
-
-//       options={options}
-
-//       value={value}
-
-//       onChange={handleChange}
-
-//     />
-
-//     <p>We eat {value}!</p>
-
-//   </div>
-
-// );
+};
 
 
+return (
 
-// const Dropdown = ({ label, value, options, onChange }) => {
+  <div>
 
-// return (
+    <Dropdown
 
-//   <label>
+      label="What do we eat?"
 
-//     {label}
+      options={options}
 
-//     <select value={value} onChange={onChange}>
+      value={value}
 
-//       {options.map((option) => (
+      onChange={handleChange}
 
-//         <option value={option.value}>{option.label}</option>
+    />
 
-//       ))}
+    <p>We eat {value}!</p>
 
-//     </select>
+  </div>
 
-//   </label>
+);
+}
 
-// );
-// }
-// };
+export default DropdownContainer;
+
+
+
+
 
 
 
@@ -125,74 +131,76 @@ import * as React from 'react';
 
 // v4
 
-const Dropdown = ({ label, value, options, onChange }) => {
+// const Dropdown = ({ label, value, options, onChange }) => {
 
-  const [food, setFood] = React.useState('fruit');
+//   const [food, setFood] = React.useState('fruit');
  
-  const [drink, setDrink] = React.useState('water');
+//   const [drink, setDrink] = React.useState('water');
  
-  const handleFoodChange = (event) => {
+//   const handleFoodChange = (event) => {
  
-    setFood(event.target.value);
+//     setFood(event.target.value);
  
-  };
+//   };
  
-  const handleDrinkChange = (event) => {
+//   const handleDrinkChange = (event) => {
  
-    setDrink(event.target.value);
+//     setDrink(event.target.value);
  
-  };
+//   };
  
-  return (
+//   return (
  
-    <div>
+//     <div>
  
-      <Dropdown
+//       <Dropdown
  
-        label="What do we eat?"
+//         label="What do we eat?"
  
-        options={[
+//         options={[
  
-          { label: 'Fruit', value: 'fruit' },
+//           { label: 'Fruit', value: 'fruit' },
  
-          { label: 'Vegetable', value: 'vegetable' },
+//           { label: 'Vegetable', value: 'vegetable' },
  
-          { label: 'Meat', value: 'meat' },
+//           { label: 'Meat', value: 'meat' },
  
-        ]}
+//         ]}
  
-        value={food}
+//         value={food}
  
-        onChange={handleFoodChange}
+//         onChange={handleFoodChange}
  
-      />
+//       />
  
-      <Dropdown
+//       <Dropdown
  
-        label="What do we drink?"
+//         label="What do we drink?"
  
-        options={[
+//         options={[
  
-          { label: 'Water', value: 'water' },
+//           { label: 'Water', value: 'water' },
  
-          { label: 'Beer', value: 'beer' },
+//           { label: 'Beer', value: 'beer' },
  
-          { label: 'Wine', value: 'wine' },
+//           { label: 'Wine', value: 'wine' },
  
-        ]}
+//         ]}
  
-        value={drink}
+//         value={drink}
  
-        onChange={handleDrinkChange}
+//         onChange={handleDrinkChange}
  
-      />
+//       />
  
-      <p>We eat {food}!</p>
+//       <p>We eat {food}!</p>
  
-      <p>We drink {drink}!</p>
+//       <p>We drink {drink}!</p>
  
-    </div>
+//     </div>
  
-  );
+//   );
  
-      };
+//       };
+
+// export default Dropdown;
