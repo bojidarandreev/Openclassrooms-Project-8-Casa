@@ -26,7 +26,11 @@ const router = createBrowserRouter([
       {
         path: '/*',
         element: <Error404 />,
-      }
+      },
+      // {
+      //   path: '/SingleRental',
+      //   element: <SingleRental />,
+      // }
     ]
   },
 

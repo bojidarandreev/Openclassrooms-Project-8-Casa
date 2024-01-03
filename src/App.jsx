@@ -5,10 +5,13 @@ import './App.css'
 import { Outlet } from 'react-router'
 import Carousel from './components/Carousel/Carousel'
 import DropdownContainer from './components/Dropdown/Dropdown'
-import GetData from './components/GetData/GetData'
+import CardData from './components/Card/Card'
+
 
 
 function App() {
+
+  
 
   return (
     <>
@@ -16,8 +19,8 @@ function App() {
       <main>
         <Outlet />,
         {/* <Carousel />, */}
-        <DropdownContainer />,
-        <GetData />
+        {/* <DropdownContainer />, */}
+        <CardData />
       </main>
       <Footer />
     </>
