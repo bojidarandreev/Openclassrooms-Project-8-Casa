@@ -3,10 +3,6 @@ import Navigation from './components/Navigation/Navigation'
 
 import './App.css'
 import { Outlet } from 'react-router'
-import Carousel from './components/Carousel/Carousel'
-import DropdownContainer from './components/Dropdown/Dropdown'
-import CardData from './components/Card/Card'
-
 
 
 function App() {
@@ -17,10 +13,7 @@ function App() {
     <>
       <Navigation />
       <main>
-        <Outlet />,
-        {/* <Carousel />, */}
-        {/* <DropdownContainer />, */}
-        <CardData />
+        <Outlet />
       </main>
       <Footer />
     </>

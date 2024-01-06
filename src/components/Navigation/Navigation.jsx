@@ -3,7 +3,7 @@ import './navigation.css'
 
 
 
-export default function Navigation() {
+export default function Navigation(props) {
 
     
 
@@ -12,7 +12,7 @@ export default function Navigation() {
             <nav>
                 <ul>
                     <li>
-                        <Link to="/">Accueil</Link>
+                        <Link to="/" >Accueil</Link>
                     </li>
                     <li>
                         <Link to="/about">A propos</Link>

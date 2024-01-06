@@ -1,25 +1,36 @@
-import './carousel.css';
-import Photo from '../../assets/colors.jpg'
-import Photo2 from '../../assets/slide1.jpg'
-
-export default function Carousel() {
-
+import React, { useState } from 'react';
+import './carousel.css'
+const Carousel = ({ images }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const nextSlide = () => {
+    setActiveIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+    // console.log(`Current image index: ${activeIndex+1}`);
+  };
+  const prevSlide = () => {
+    setActiveIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+    // console.log(`Current image index: ${activeIndex+1}`);
+  };
   return (
-    <>
-    <section>
-      <div id="banner">
-        <img src="./assets/images/arrow_left.png" alt="left arrow" className="arrow arrow_left" />
-        <img src="./assets/images/arrow_right.png" alt="right arrow" className="arrow arrow_right" />
-        <img className="banner-img" src={Photo} alt="Banner Print-it" />
-        <p>Impressions tous formats <span>en boutique et en ligne</span></p>
-        <div className="dots">
-        </div>
+    <div className="carousel">
+      <button onClick={prevSlide} className="carousel__btn carousel__btn--prev">
+        &lt;
+      </button>
+      <div className='carousel__imgContainer'>
+      <img
+        src={images[activeIndex]}
+        alt={`Slide ${activeIndex}`}
+        className="carousel__img"
+      />
+      <p className='carousel__number'>1/{activeIndex+1}</p>
       </div>
-    </section>
-    {/* <script src="./assets/script.js"></script> */}
-    </>
-
-  )
-}
-
-
+      <button onClick={nextSlide} className="carousel__btn carousel__btn--next">
+        &gt;
+      </button>
+    </div>
+  );
+};
+export default Carousel;
