@@ -31,6 +31,10 @@
 	display: block;
 	transition: transform 0.3s ease-in-out;
   }
+  .carousel__number__none, .carousel__btn__none {
+	display: none;
+  }
+  
   /* .carousel__img:hover {
 	transform: scale(1.05);
   } */

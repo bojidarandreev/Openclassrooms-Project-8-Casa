@@ -135,8 +135,13 @@ function CardData() {
 //     </>
 //   );
 return (
-  <div>
-    {newDataJs.map(appart => <Link key={appart.id} to={`/appart/${appart.id}`} style={{"display": "block"}}>{appart.id}</Link>)}
+  <div className="cards__container">
+    {newDataJs.map(appart => <Link key={appart.id} to={`/appart/${appart.id}`} style={{"display": "block"}}>
+      <section className="card__content">
+        <h3 className="card__title" >{appart.title}</h3>
+        <img src={appart.cover} alt={`${appart.title}, proposé par ${appart.host.name} `} className="card__image" />
+      </section>
+      </Link>)}
   </div>
 )
 }

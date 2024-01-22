@@ -1,0 +1,32 @@
+.home__content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    align-items: center;
+}
+
+.banner__image{
+    object-fit: cover;
+    height: calc(100vw / 5);
+    width: calc(100vw - (100vw/ 6) );
+    
+}
+
+// .home__content {
+//     display: flex;
+//     flex-direction: column;
+//     flex-wrap: wrap;
+//     align-items: center;
+// }
+
+
+.home {
+    &__content {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    
+}

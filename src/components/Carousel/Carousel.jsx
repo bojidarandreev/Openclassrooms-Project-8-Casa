@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import './carousel.css'
+import React, { useState } from "react";
+import "./carousel.css";
 const Carousel = ({ images }) => {
+  const hasOneImage = images.length <= 1;
   const [activeIndex, setActiveIndex] = useState(0);
   const nextSlide = () => {
     setActiveIndex((prevIndex) =>
@@ -16,18 +17,34 @@ const Carousel = ({ images }) => {
   };
   return (
     <div className="carousel">
-      <button onClick={prevSlide} className="carousel__btn carousel__btn--prev">
+      <button
+        onClick={prevSlide}
+        className={
+          hasOneImage ? "carousel__btn__none" : `carousel__btn carousel__btn--prev`
+        }
+      >
         &lt;
       </button>
-      <div className='carousel__imgContainer'>
-      <img
-        src={images[activeIndex]}
-        alt={`Slide ${activeIndex}`}
-        className="carousel__img"
-      />
-      <p className='carousel__number'>{activeIndex+1}/{images.length}</p>
+      <div className="carousel__imgContainer">
+        <img
+          src={images[activeIndex]}
+          alt={`Slide ${activeIndex}`}
+          className="carousel__img"
+        />
+        <p
+          className={
+            hasOneImage ? "carousel__number__none" : "carousel__number"
+          }
+        >
+          {activeIndex + 1}/{images.length}
+        </p>
       </div>
-      <button onClick={nextSlide} className="carousel__btn carousel__btn--next">
+      <button
+        onClick={nextSlide}
+        className={
+          hasOneImage ? "carousel__btn__none" : "carousel__btn carousel__btn--next"
+        }
+      >
         &gt;
       </button>
     </div>

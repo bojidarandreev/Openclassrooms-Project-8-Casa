@@ -1,4 +1,4 @@
-.cardsContainer {
+.cards__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     
@@ -6,7 +6,7 @@
 .cardContent {
     
 }
-.cardContent img {
+.card__content img {
     width: 100px;
     height: 100px;
     object-fit: cover;
