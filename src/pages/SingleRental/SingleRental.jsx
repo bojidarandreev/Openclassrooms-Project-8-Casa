@@ -4,13 +4,18 @@ import { useParams, useNavigate } from "react-router-dom";
 import newDataJs from "../../assets/newData.json";
 import Carousel from "../../components/Carousel/Carousel";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+
 import "./singleRental.css";
+import DropdownContainer from "../../components/Dropdown/Dropdown";
+import Summary from "../../components/Summary/Summary";
 
 export default function SingleRental() {
   const [appart, setAppart] = useState(null);
   const { id } = useParams();
   const navigate = useNavigate();
-  console.log(appart);
+  //console.log(appart);
 
   useEffect(() => {
     const data = newDataJs.find((appart) => appart.id === id);
@@ -31,18 +36,24 @@ export default function SingleRental() {
           <h2 className="locationSubTitle">{appart.location}</h2>
           <ul className="tagGroup">
             {appart.tags.map((tag) => (
-              <li>{tag}</li>
+              <li key={tag}>{tag} </li>
             ))}{" "}
           </ul>
           {/* <div>{appart.tags.split(',').map((item, i) => <p key={i}>{item}</p>)}</div> */}
         </div>
         <div className="locationInfo-2">
           <div>
-            {[...Array(Number(appart.rating))].map((e, i) => {
+            {[...Array(5)].map((n, i) => {
+              const ratingValue = Number(appart.rating);
               return (
-                <p className="star" key={i}>
-                  {i}
-                </p>
+                <span key={i}>
+                  <FontAwesomeIcon
+                    icon={faStar}
+                    color={
+                      ratingValue <= i ? "#ccc" : "#ffa500"
+                    }
+                  />
+                </span>
               );
             })}
           </div>
@@ -56,14 +67,14 @@ export default function SingleRental() {
           </div>
         </div>
         <div className="locationInfo-3">
-          <div className="locationDesctiption">
-            <h3 className="locationDescriptionTitle">Description</h3>
-            <p className="locationDescriptionText">{appart.desctiption}</p>
+          <div className="locationDesctiption"><h3>Description</h3>
+            <Summary title="Description" details = {appart.description}/>
           </div>
-          <div className="locationEquipements">
-            <h3 className="locationEquipementsTitle">Equipements</h3>
+          <div className="locationEquipements"><h3>Equipements</h3>
+          <Summary title="Equipements" details = {appart.equipments}/>
             {/* <div className="locationEquipementsText">{appart.equipments.split(',').map((item, i) => <p key={i}>{item}</p>)}</div> */}
           </div>
+          
         </div>
       </div>
     </>

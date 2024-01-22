@@ -2,59 +2,6 @@ import './dropdown.css'
 
 import * as React from 'react';
 
-
-
-// v2
-// export default function Dropdown() {
-
-//   const options = [
- 
-//     { label: 'Fruit', value: 'fruit' },
- 
-//     { label: 'Vegetable', value: 'vegetable' },
- 
-//     { label: 'Meat', value: 'meat' },
- 
-//   ];
- 
-//   const [value, setValue] = React.useState('fruit');
- 
-//   const handleChange = (event) => {
- 
-//     setValue(event.target.value);
- 
-//   };
- 
-//   return (
- 
-//     <div>
- 
-//       <label>
- 
-//         What do we eat?
- 
-//         <select value={value} onChange={handleChange}>
- 
-//           {options.map((option) => (
- 
-//             <option value={option.value}>{option.label}</option>
- 
-//           ))}
- 
-//         </select>
- 
-//       </label>
- 
-//       <p>We eat {value}!</p>
- 
-//     </div>
- 
-//   );
- 
-//  };
-
-// v3
-
 const Dropdown = ({ label, value, options, onChange }) => {
 
   return (
@@ -63,15 +10,15 @@ const Dropdown = ({ label, value, options, onChange }) => {
   
       {label}
   
-      <select value={value} onChange={onChange}>
+      <ul value={value} onChange={onChange}>
   
         {options.map((option) => (
   
-          <option key={option.value} value={option.value}>{option.label}</option>
+          <li className='dropdownItem' >{option.label}</li>
   
         ))}
   
-      </select>
+      </ul>
   
     </label>
   
@@ -81,7 +28,9 @@ const Dropdown = ({ label, value, options, onChange }) => {
 const DropdownContainer = () => {
 
 const options = [
-
+// Take the Description options values, 
+// from appart.options props that came from 
+// SingleRental, and renred it like <li> List Items
   { label: 'Fruit', value: 'fruit' },
 
   { label: 'Vegetable', value: 'vegetable' },

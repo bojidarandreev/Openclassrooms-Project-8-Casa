@@ -25,7 +25,7 @@ const Carousel = ({ images }) => {
         alt={`Slide ${activeIndex}`}
         className="carousel__img"
       />
-      <p className='carousel__number'>1/{activeIndex+1}</p>
+      <p className='carousel__number'>{activeIndex+1}/{images.length}</p>
       </div>
       <button onClick={nextSlide} className="carousel__btn carousel__btn--next">
         &gt;

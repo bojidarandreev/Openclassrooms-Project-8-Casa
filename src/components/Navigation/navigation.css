@@ -11,3 +11,7 @@ nav ul {
 nav ul li {
     list-style: none;
 }
+
+nav ul li a.active {
+    color: green;
+}
