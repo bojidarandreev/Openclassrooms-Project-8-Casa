@@ -1,0 +1,81 @@
+.locationInfoContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  align-items: start;
+
+}
+.locationInfo-1 {
+  h1 {
+    font-size: 36px;
+    color: #ff6060;
+    line-height: 51.34px;
+    font-weight: 500;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ff6060;
+    line-height: 25.67px;
+  }
+
+  ul {
+    padding-top: 20px;
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    li {
+    word-break: keep-all;
+    overflow-wrap: normal;
+      border: 10px;
+      border-color: #ff6060;
+      border-radius: 10px;
+      height: 25px;
+      padding: 3px 20px 3px 20px;
+
+      font-size: 14px;
+      text-align: center;
+      color: white;
+      background-color: #ff6060;
+    }
+  }
+}
+.locationInfo-2 {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: end;
+  
+
+  .location {
+    &__rating {
+        span {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+        }
+    }
+    &__host {
+        display: flex;
+        gap: 10px;
+    //   display: grid;
+    //   grid-template-columns: repeat(2, 94px);
+    //   justify-items: end;
+    //   justify-content: end;
+      &__name {
+        color: #ff6060;
+        font-size: 18px;
+        line-height: 25.67px;
+        text-align:right;
+        max-width: 94px;
+      }
+      &__img {
+        height: 64px;
+        width: 64px;
+        border-radius: 64px;
+    }
+    }
+    
+  }
+}

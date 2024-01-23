@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import newDataJs from "../../assets/newData.json";
-import "./card.css";
+import "./card.scss";
 import Carousel from "../Carousel/Carousel";
 import SingleRental from "../../pages/SingleRental/SingleRental";
 
@@ -136,8 +136,9 @@ function CardData() {
 //   );
 return (
   <div className="cards__container">
-    {newDataJs.map(appart => <Link key={appart.id} to={`/appart/${appart.id}`} style={{"display": "block"}}>
+    {newDataJs.map(appart => <Link key={appart.id} to={`/appart/${appart.id}`} style={{"display": "block"} } className="card">
       <section className="card__content">
+        <div className="card__shadow"></div>
         <h3 className="card__title" >{appart.title}</h3>
         <img src={appart.cover} alt={`${appart.title}, proposé par ${appart.host.name} `} className="card__image" />
       </section>

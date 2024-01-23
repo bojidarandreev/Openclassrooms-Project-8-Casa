@@ -7,15 +7,13 @@ import Carousel from "../../components/Carousel/Carousel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
-import "./singleRental.css";
-import DropdownContainer from "../../components/Dropdown/Dropdown";
+import "./singleRental.scss";
 import Summary from "../../components/Summary/Summary";
 
 export default function SingleRental() {
   const [appart, setAppart] = useState(null);
   const { id } = useParams();
   const navigate = useNavigate();
-  //console.log(appart);
 
   useEffect(() => {
     const data = newDataJs.find((appart) => appart.id === id);
@@ -39,10 +37,9 @@ export default function SingleRental() {
               <li key={tag}>{tag} </li>
             ))}{" "}
           </ul>
-          {/* <div>{appart.tags.split(',').map((item, i) => <p key={i}>{item}</p>)}</div> */}
         </div>
         <div className="locationInfo-2">
-          <div>
+          <div className="location__rating">
             {[...Array(5)].map((n, i) => {
               const ratingValue = Number(appart.rating);
               return (
@@ -50,18 +47,18 @@ export default function SingleRental() {
                   <FontAwesomeIcon
                     icon={faStar}
                     color={
-                      ratingValue <= i ? "#ccc" : "#ffa500"
+                      ratingValue <= i ? "#E3E3E3" : "#FF6060"
                     }
                   />
                 </span>
               );
             })}
           </div>
-          <div className="logationHost">
-            <p className="locationHostName">{appart.host.name}</p>
+          <div className="location__host">
+            <p className="location__host__name">{appart.host.name}</p>
             <img
               src={appart.host.picture}
-              className="locationHostImage"
+              className="location__host__img"
               alt={appart.host.name}
             ></img>
           </div>
