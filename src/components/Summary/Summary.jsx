@@ -1,4 +1,4 @@
-import "./summary.css";
+import "./summary.scss";
 
 const Summary = function ({ title, details }) {
   const hasDetails = details[0].length <= 1;
@@ -6,14 +6,14 @@ const Summary = function ({ title, details }) {
 
   if (hasDetails) {
     return <details className="summary">
-    <summary className="summary-title">{title}</summary>        
-      <p className="summary-details">{details}</p>
+    <summary className="summary__title">{title}</summary>        
+      <p className="summary__details summary__single">{details}</p>
   </details>;
     }
     return <details className="summary">
-    <summary className="summary-title">{title}</summary>
+    <summary className="summary__title">{title}</summary>
     {details.map((detail) => (
-      <p key={detail} className="summary-details">{detail}</p>
+      <p key={detail} className="summary__details summary__multiple">{detail}</p>
     ))}
   </details>;
 

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-import newDataJs from "../../assets/newData.json";
+import newDataJs from "../../../assets/newData.json";
 import Carousel from "../../components/Carousel/Carousel";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -46,9 +46,7 @@ export default function SingleRental() {
                 <span key={i}>
                   <FontAwesomeIcon
                     icon={faStar}
-                    color={
-                      ratingValue <= i ? "#E3E3E3" : "#FF6060"
-                    }
+                    color={ratingValue <= i ? "#E3E3E3" : "#FF6060"}
                   />
                 </span>
               );
@@ -64,14 +62,8 @@ export default function SingleRental() {
           </div>
         </div>
         <div className="locationInfo-3">
-          <div className="locationDesctiption"><h3>Description</h3>
-            <Summary title="Description" details = {appart.description}/>
-          </div>
-          <div className="locationEquipements"><h3>Equipements</h3>
-          <Summary title="Equipements" details = {appart.equipments}/>
-            {/* <div className="locationEquipementsText">{appart.equipments.split(',').map((item, i) => <p key={i}>{item}</p>)}</div> */}
-          </div>
-          
+          <Summary title="Description" details={appart.description} />
+          <Summary title="Equipements" details={appart.equipments} />
         </div>
       </div>
     </>

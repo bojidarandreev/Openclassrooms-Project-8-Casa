@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
-import newDataJs from "../../assets/newData.json";
+import newDataJs from "../../../assets/newData.json";
 import "./card.scss";
 import Carousel from "../Carousel/Carousel";
 import SingleRental from "../../pages/SingleRental/SingleRental";
