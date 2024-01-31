@@ -1,26 +1,36 @@
+@import 'src/styles/scss/variables';
+
 .cards__container {
+  margin-top: 1.69rem;
+  //margin-bottom: 1.6 9rem;
+  border-radius: 1.56rem;
+  width: 100%;
+  background-color: unset;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 80px;
-  // .card:hover {
-  //   .card__shadow {
-  //     box-shadow: inset 0px -50px 27px -6px rgba(242, 6, 6, 0.94);
-  //   }
-  // }
+  transition: all 1s;
+  
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 1.25rem;
+    column-gap: 1.25rem;
+    padding: 0 0 0 0;
+
+  
+
   .card {
     
     text-decoration: none;
-    width: 340px;
-    height: 340px;
-    max-width: 340px;
-    max-height: 360px;
+    width: calc($widthCard - 0.01vw);
+    height: calc($heightCard - $multiplicator);
+    
+    
     &__shadow {
       border-radius: 10px;
-      position: absolute;
-      width: 340px;
-      height: 360px;
+      
+      width: inherit;
+      height: inherit;
       box-shadow: inset 0px -130px 27px -6px rgba(0,0,0,0.34);
-      z-index: -1;
+      position: absolute;
+      z-index: 2;
       transition: box-shadow 0.3s;
     }
     &:hover {
@@ -29,39 +39,89 @@
         // box-shadow: inset 0px -120px 27px -6px rgba(0, 0, 0, 0.54);
       }
       .card__title {
-        bottom: 25px;
+        
+        bottom: 1.26rem;
       }
       
     }
     &__content {
       
       position: relative;
-      width: 340px;
-      height: 360px;
-      max-width: 340px;
-      max-height: 360px;
+      width: inherit;
+      height: inherit;
+      
     }
     &__title {
       color: white;
       line-height: 25.6px;
       font-size: 18px;
       font-weight: 500;
-      width: 300px;
-      height: 52px;
+      width: calc($widthCard - 3rem);
+      //height: 52px;
       position: absolute;
-      z-index: 0;
-      left: 20px;
-      bottom: 20px;
+      z-index: 2;
+      left: 1.25rem;
+      bottom: 1.25rem;
       transition: bottom 0.5s;
     }
     &__image {
       border-radius: 10px;
       position: relative;
-      z-index: -2;
+      z-index: 1;
       object-fit: cover;
-      width: 340px;
-      height: 360px;
+      width: inherit;
+      height: inherit;
       
     }
   }
+}
+
+/* Small devices such as large phones (640px and up) */
+@media only screen and (min-width: 40em) {
+  .cards__container {
+    background-color: $colorGray;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 1.25rem;
+    column-gap: 1.25rem;
+    padding:  1.25rem  1.25rem 1.25rem 1.25rem;
+
+    .card {
+    &__title {
+      font-size:16px;
+      // bottom: unset;
+      // top: 1.65rem;
+      height: unset;
+    }
+  }
+  }
+}
+
+/* Medium devices such as tablets (768px and up) */
+@media only screen and (min-width: 48em) {
+  .cards__container {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 2.69rem;
+    //margin-bottom: 2.59rem;
+    row-gap: 3.5rem;
+    column-gap: 3.12rem;
+    padding:  3.5rem  3.13rem 2.69rem 3.13rem;
+    .card {
+      &__title {
+        // bottom:1.25rem;
+        font-size:16px;
+            height: 52px;
+      }
+    }
+  }
+}
+
+/* Large devices such as laptops (1024px and up) */
+@media only screen and (min-width: 64em) {
+  .cards__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Largest devices such as desktops (1280px and up) */
+@media only screen and (min-width: 80em) {
 }

@@ -1,30 +1,127 @@
+.home__content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
 
-.home {
-  &__content {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
 
-    .banner {
-    //   background-color: black;
-      display: block;
-      &__image {
-        // object-fit: cover;
-        // height: calc(100vw / 5.6);
-        width: calc(100vw - (100vw / 6));
-        // opacity: 0.75;
-      }
-      &__title {
-        color: white;
-        font-size: 48px;
-        font-weight: 500;
-        position: absolute;
-        left: 50%;
-        top: 45%;
-        transform: translate(-50%, -50%);
-        padding: 10px;
-      }
+.banner {
+  border-radius: 0.62rem; 
+  height: 7rem;
+  width: 100%;
+  text-align: justify;
+
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  &__image {
+    border-radius: 0.62rem;
+    height: 7rem;
+    width: 100%;
+    object-fit: cover;
+    //height: calc(100vw / 5.6);
+    //width: calc(100vw - (100vw / 6));
+    // opacity: 0.75;
+  }
+
+  // &__title {
+  //   color: white;
+  //   font-size: 48px;
+  //   font-weight: 500;
+  //   position: absolute;
+  //   left: 50%;
+  //   top: 45%;
+  //   transform: translate(-50%, -50%);
+  //   padding: 10px;
+  // }
+  &__title {
+    padding-left: 3rem;
+    padding-right: calc(3rem + 6vw);
+    margin-right: 1rem;
+    top: calc((98px + 5px) + 7vw);
+    height: unset;
+    line-height: calc(1.5rem + 0.5vw);
+    font-size: calc(10px + 2.4vw);
+
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    color: white;
+    font-weight: 500;
+    position: absolute;
+    width: calc(70% + 25vw);
+    transition: bottom 0.5s;
+  }
+}
+
+
+
+
+
+
+// /* Small devices such as large phones (640px and up) */
+@media only screen and (min-width: 40em) {
+  .banner {
+
+    height: 7rem;
+    &__title {
+      padding-left: calc(5rem - 1vw);
+      // margin-right: 5rem;
+      top: calc((90px + 5px) + 3.5vw);
+      height: 13.9rem;
+      line-height: 4.278rem;
+      font-size: calc(10px + 2.3vw);
+      text-align: center;
+      width: 100%
+    }
+
+    &__image {
+      height: 7rem;
+      width: 100%;
+    }
+  }
+}
+
+/* Medium devices such as tablets (768px and up) */
+@media only screen and (min-width: 48em) {
+  .banner {
+    border-radius: 1.56rem;
+    height: 13.9rem;
+    &__image {
+      border-radius: 1.56rem;
+      height: 13.9rem;
+    }
+    &__title {
+      padding-left: calc(5rem - 3vw);
+      // margin-right: 5rem;
+      top: calc((90px + 120px) + 4.1vw);
+      height: 13.9rem;
+      line-height: 4.278rem;
+      font-size: calc(10px + 2.1vw);
+      width: 100%;
+      max-width: 1240px;
+    }
+  }
+}
+
+/* Large devices such as laptops (1024px and up) */
+@media only screen and (min-width: 64em) {
+  .banner {
+    &__title {
+      top: calc((90px + 120px) + 2.9vw);
+    }
+  }
+}
+
+/* Largest devices such as desktops (1280px and up) */
+@media only screen and (min-width: 80em) {
+  .banner {
+    &__title {
+      font-size: 48px;
+      padding-left: 10rem;
+      left: unset;
+      top: 240px;
     }
   }
 }

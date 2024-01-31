@@ -1,0 +1,65 @@
+.footer {
+    
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height:13.06rem;
+    background-color: black;
+    color: white;
+    &__content {
+        padding-top:4.13rem;
+        padding-bottom: 3.63rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        p {
+            font-size: 0.75rem;
+        }
+    }
+}
+
+// /* Small devices such as large phones (640px and up) */
+@media only screen and (min-width: 40em) {
+    .footer {
+    
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        &__content {
+            padding-top:4.13rem;
+        padding-bottom: 3.63rem;
+            gap: 1rem;
+            p {
+                font-size: 0.75rem;
+            }
+        }
+    }
+}
+
+/* Medium devices such as tablets (768px and up) */
+@media only screen and (min-width: 48em) {
+    .footer {
+    
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        &__content {
+            padding-top:4.13rem;
+        padding-bottom: 1.18rem;
+            gap: 1.75rem;
+            p {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+/* Large devices such as laptops (1024px and up) */
+@media only screen and (min-width: 64em) {
+}
+
+/* Largest devices such as desktops (1280px and up) */
+@media only screen and (min-width: 80em) {
+}

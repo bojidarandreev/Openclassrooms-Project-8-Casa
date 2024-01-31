@@ -1,17 +1,17 @@
 import Summary from "../../components/Summary/Summary";
-import "./about.scss";
 
 export default function About() {
   return (
-    <section className="about__content">
+    <div className="content__about">
       <div className="banner">
-      <img
-        src="assets/about-banner.png"
-        alt="Accueil-banner"
-        className="banner__image"
-      />
+        <img
+          src="assets\about-banner.png"
+          alt="Accueil-banner"
+          className="banner__image"
+        />
       </div>
-      <div className="about__info">
+
+      <section className="about__info">
         <Summary
           title="Fiabilité"
           details={
@@ -36,7 +36,7 @@ export default function About() {
             "La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes."
           }
         />
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }

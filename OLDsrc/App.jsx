@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <Navigation />
-      <main className='main__content'>
+      <main className='content'>
         <Outlet />
       </main>
       <Footer />

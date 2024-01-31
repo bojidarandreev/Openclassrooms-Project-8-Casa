@@ -1,0 +1,39 @@
+.about {
+    &__info {
+        display: grid;
+        gap: calc(1px + 0.1vw);
+        margin-left: calc(13.03rem - 6.25rem);
+        margin-right: calc(13.03rem - 6.25rem);
+    }
+    // &__content {
+    //     margin-bottom: 2.59rem;
+    // }
+}
+
+// /* Small devices such as large phones (640px and up) */
+@media only screen and (min-width: 40em) {
+    .about {
+        &__info {
+            margin-left: 6.7rem;
+            margin-right: 6.7rem;
+        }
+    }
+}
+
+/* Medium devices such as tablets (768px and up) */
+@media only screen and (min-width: 48em) {
+    .about {
+        &__info {
+            margin-left: calc(13.03rem - 6.25rem);
+            margin-right: calc(13.03rem - 6.25rem);
+        }
+    }
+}
+
+/* Large devices such as laptops (1024px and up) */
+@media only screen and (min-width: 64em) {
+}
+
+/* Largest devices such as desktops (1280px and up) */
+@media only screen and (min-width: 80em) {
+}

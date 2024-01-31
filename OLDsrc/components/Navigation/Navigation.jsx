@@ -3,13 +3,13 @@ import "./navigation.scss";
 
 export default function Navigation(props) {
   return (
-    <header className="header">
-      <nav>
-        <div className="site-logo">
-          <a href="/" title="Kasa">
+    <header>
+      <nav className="header">
+        
+          <a href="/" title="Kasa" className="header__logo">
             <img src="/assets/kasa-logo.svg" alt="logo-kasa" />
           </a>
-        </div>
+        
         <ul className="header__nav">
           <li className="header__nav--item">
             <NavLink to="/">Accueil</NavLink>

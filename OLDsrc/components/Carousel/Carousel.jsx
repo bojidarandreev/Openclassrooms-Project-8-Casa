@@ -20,10 +20,9 @@ const Carousel = ({ images }) => {
       <button
         onClick={prevSlide}
         className={
-          hasOneImage ? "carousel__btn--none" : `carousel__btn carousel__btn--prev`
+          hasOneImage ? "carousel__btn__none" : `carousel__btn carousel__btn--prev`
         }
       >
-        
       </button>
       <div className="carousel__imgContainer">
         <img
@@ -45,7 +44,6 @@ const Carousel = ({ images }) => {
           hasOneImage ? "carousel__btn--none" : "carousel__btn carousel__btn--next"
         }
       >
-        
       </button>
     </div>
   );

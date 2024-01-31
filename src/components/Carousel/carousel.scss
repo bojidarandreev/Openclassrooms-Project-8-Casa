@@ -2,53 +2,166 @@
   position: relative;
   max-width: 100%;
   overflow: hidden;
+  &__number{
+    &--none {
+      display: none;
+    }
+  }
 }
 .carousel__btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+  background-color: unset;
+  // color: white;
   font-size: 5.5rem;
   border: none;
   padding: 1rem;
   cursor: pointer;
   z-index: 1;
+  zoom: 0.5;
   transition: background-color 0.3s;
-}
-.carousel__btn:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-.carousel__btn--prev {
-  left: 0;
-}
-.carousel__btn--next {
-  right: 0;
-}
-.carousel__img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease-in-out;
-}
-.carousel__number__none,
-.carousel__btn__none {
-  display: none;
+
+  &--prev {
+    left: 0;
+    &:after {
+      content: url("../../../assets/left.svg");
+  
+    }
+  }
+  &--next {
+    right: 0;
+    &:after {
+      content: url("../../../assets/right.svg");
+      
+    }
+  }
+
+  &:hover {
+    zoom: 0.5;
+  }
+
+  &--none {
+    display: none;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+  }
 }
 
-/* .carousel__img:hover {
-	transform: scale(1.05);
-  } */
+
+
+// .carousel__number--none,
+// .carousel__btn__none {
+//   display: none;
+// }
+
 .carousel {
   &__imgContainer {
-    
+    border-radius: 25px;
+    position: relative;
+    &:before {
+      z-index: 0;
+      background-color: unset;
+      border-radius: inherit;
+      content: "";
+      height: 99.1%;
+      width: 100%;
+      box-shadow: none;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition:all 3s;
+    }
   }
   &__img {
-    border-radius: 25px;
+    z-index: 1;
+    position: relative;
+    
+    border-radius:inherit;
       position: relative;
       z-index: -2;
       object-fit: cover;
       width: 100%;
       height: 415px;
   }
+
+  &__number {
+    color: white;
+    font-size: 18px;
+    left: 49%;
+     position: absolute;
+     bottom: 1rem;
+     display: none;
+
+  }
+}
+
+// /* Small devices such as large phones (640px and up) */
+@media only screen and (min-width: 40em) {
+  .carousel {
+    &__imgContainer {
+      &:before {
+        box-shadow: none;
+      }
+      
+    }
+  &__number {
+    display: none;
+
+  }
+  &__btn {
+    zoom: 0.5;
+    &:hover {
+      zoom: 0.5;
+    }
+  }
+}
+}
+
+/* Medium devices such as tablets (768px and up) */
+@media only screen and (min-width: 48em) {
+  .carousel {
+    &__imgContainer {
+      &:before {
+        box-shadow: inset 0px -130px 27px -6px rgba(0,0,0,0.24);
+      }
+      
+    }
+    &__number {
+      display: block;
+  
+    }
+    &__btn {
+      zoom: 1;
+      &:hover {
+        zoom: 1.1;
+      }
+    }
+  }
+}
+
+/* Large devices such as laptops (1024px and up) */
+@media only screen and (min-width: 64em) {
+  .carousel {
+    &__imgContainer {
+      &:before {
+        box-shadow: inset 0px -130px 27px -6px rgba(0,0,0,0.24);
+      }
+      
+    }
+    &__number {
+      display: block;
+  
+    }
+  }
+}
+
+/* Largest devices such as desktops (1280px and up) */
+@media only screen and (min-width: 80em) {
 }

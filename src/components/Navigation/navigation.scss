@@ -1,0 +1,131 @@
+header {
+    
+    margin-top: 1.25rem;
+        margin-bottom: 1.69rem;
+    .site-logo a img {
+        width: 9rem;
+    }
+}
+
+
+
+
+nav {
+    //width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content:flex-start;
+}
+
+nav ul {
+    //width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+                
+    font-size: 12px;
+    text-transform:uppercase;
+    line-height: 34.22px;
+    color: #FF6060;
+}
+
+nav ul li a.active {
+    text-decoration: underline;
+    text-decoration-thickness: 0.8px;
+text-underline-offset: 2px;
+}
+nav ul li a:hover {
+    
+    text-decoration: underline;
+    text-decoration-thickness: 0.8px;
+text-underline-offset: 2px;
+}
+
+// /* Small devices such as large phones (640px and up) */
+@media only screen and (min-width: 40em) {
+    header {
+    
+    .site-logo a img {
+        width: 9rem;
+    }    
+}
+nav {   
+    ul {
+        display: flex;
+    gap: 10px;
+    align-items: center;
+        li {
+            a {
+                font-size: 12px;
+                text-transform:uppercase;
+            }
+        }
+    }
+    
+}
+}
+
+/* Medium devices such as tablets (768px and up) */
+@media only screen and (min-width: 48em) {
+    header {
+        margin-top: 2.59rem;
+    margin-bottom: 2.69rem;
+        .site-logo a img {
+            width: 13.2rem;
+        }    
+    }
+    nav {   
+        ul {
+            gap: 35px;
+            align-items: flex-start;
+            li {
+                a {
+                    font-size: calc(12px + 1.1vw);
+                    text-transform:initial;
+                }
+            }
+        }
+        
+    }
+}
+
+/* Large devices such as laptops (1024px and up) */
+@media only screen and (min-width: 64em) {
+    header {
+        margin-top: 2.59rem;
+        margin-bottom: 2.69rem;
+        .site-logo a img {
+            width: 13.2rem;
+        }
+    }
+    nav {   
+        ul {
+            gap: 35px;
+            display: flex;
+            align-items: flex-start;
+            li {
+                a {
+                    font-size: 24px;
+                    text-transform:initial;
+                }
+            }
+        }
+        
+    }
+    
+}
+
+/* Largest devices such as desktops (1280px and up) */
+@media only screen and (min-width: 80em) {
+}
+
+

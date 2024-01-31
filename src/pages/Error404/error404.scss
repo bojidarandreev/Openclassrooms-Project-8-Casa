@@ -1,0 +1,82 @@
+
+.error404 {
+    gap: 7.06rem;
+    padding-top:7.06rem;
+    padding-bottom: 7.06rem;
+    color: #FF6060;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        font-size: 6rem;
+        font-weight: 700;
+    }
+    p{
+        font-size: 1.125rem;
+        text-align: center;
+        line-height:1.6rem;
+    }
+    a{
+        font-size: 0.875rem;
+    }
+    &__btn{
+        color:#FF6060;
+    }
+}
+
+// /* Small devices such as large phones (640px and up) */
+@media only screen and (min-width: 40em) {
+    .error404 {
+        
+        gap: 7.06rem;
+        padding-top:7.06rem;
+    padding-bottom: 7.06rem;
+
+        h1 {
+            font-size: 6rem;
+            font-weight: 700;
+        }
+        p{
+            font-size: 1.125rem;
+            text-align: center;
+        }
+        a{
+            font-size: 0.875rem;
+        }
+    }
+}
+
+/* Medium devices such as tablets (768px and up) */
+@media only screen and (min-width: 48em) {
+    .error404 {
+        gap: 8.69rem;
+        padding-top:8.69rem;
+    padding-bottom: 8.69rem;
+    h1 {
+        font-size: 18rem;
+        font-weight: 700;
+        
+    }
+    p{
+        font-size: 1.9rem;
+        text-align: center;
+    }
+
+    }
+}
+
+/* Large devices such as laptops (1024px and up) */
+@media only screen and (min-width: 64em) {
+    .error404 {
+       
+    p{
+        font-size: 2.25rem;
+        text-align: center;
+    }
+    }
+}
+
+/* Largest devices such as desktops (1280px and up) */
+@media only screen and (min-width: 80em) {
+}

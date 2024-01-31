@@ -3,10 +3,10 @@ import "./home.scss";
 
 export default function Home() {
   return (
-    <section className="home__content">
+    <section className="content__home">
       <div className="banner">
         <img
-          src="assets/home-banner.png"
+          src="assets\home-banner.png"
           alt="Accueil-banner"
           className="banner__image"
         />
