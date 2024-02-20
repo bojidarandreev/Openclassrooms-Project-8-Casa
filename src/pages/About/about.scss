@@ -2,8 +2,8 @@
     &__info {
         display: grid;
         gap: calc(1px + 0.1vw);
-        margin-left: calc(13.03rem - 6.25rem);
-        margin-right: calc(13.03rem - 6.25rem);
+        margin-left: 0.1rem;
+        margin-right: 0.1rem;
     }
     // &__content {
     //     margin-bottom: 2.59rem;
@@ -14,8 +14,8 @@
 @media only screen and (min-width: 40em) {
     .about {
         &__info {
-            margin-left: 6.7rem;
-            margin-right: 6.7rem;
+            margin-left: 0.1rem;
+            margin-right: 0.1rem;
         }
     }
 }

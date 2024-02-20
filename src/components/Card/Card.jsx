@@ -5,34 +5,7 @@ import "./card.scss";
 import Carousel from "../Carousel/Carousel";
 import SingleRental from "../../pages/SingleRental/SingleRental";
 
-let currentRental = null;
 
-let title = null;
-let pictures = null;
-let desctiption = null;
-let hostName = null;
-let hostPicture = null;
-let rating = null;
-let location = null;
-let equipments = null;
-let tags = null;
-
-const handleCardClick = (currentRental) => {
-  // if (step != null) setStep(ri);
-
-  // console.log(currentRental);
-
-  title = currentRental.split("|")[1];
-  pictures = currentRental.split("|")[3].split(",");
-  desctiption = currentRental.split("|")[4];
-  hostName = currentRental.split("|")[5];
-  hostPicture = currentRental.split("|")[6];
-  rating = currentRental.split("|")[7];
-  location = currentRental.split("|")[8];
-  equipments = currentRental.split("|")[9];
-  tags = currentRental.split("|")[10];
-  // currentRental = null;
-};
 
 function CardData() {
   const [locationIsClicked, setlocationIsClicked] = useState(false);
@@ -42,6 +15,47 @@ function CardData() {
     } else setlocationIsClicked(false);
     console.log(locationIsClicked);
   };
+
+  return (
+    <div className="cards__container">
+      {newDataJs.map(appart => <Link key={appart.id} to={`/appart/${appart.id}`} style={{"display": "block"} } className="card">
+        <section className="card__content">
+          <div className="card__shadow"></div>
+          <h3 className="card__title" >{appart.title}</h3>
+          <img src={appart.cover} alt={`${appart.title}, proposé par ${appart.host.name} `} className="card__image" />
+        </section>
+        </Link>)}
+    </div>
+  )
+  }
+  
+  export default CardData;
+
+
+  // let currentRental = null;
+
+// let title = null;
+// let pictures = null;
+// let desctiption = null;
+// let hostName = null;
+// let hostPicture = null;
+// let rating = null;
+// let location = null;
+// let equipments = null;
+// let tags = null;
+
+// const handleCardClick = (currentRental) => {
+//   title = currentRental.split("|")[1];
+//   pictures = currentRental.split("|")[3].split(",");
+//   desctiption = currentRental.split("|")[4];
+//   hostName = currentRental.split("|")[5];
+//   hostPicture = currentRental.split("|")[6];
+//   rating = currentRental.split("|")[7];
+//   location = currentRental.split("|")[8];
+//   equipments = currentRental.split("|")[9];
+//   tags = currentRental.split("|")[10];
+// };
+
 
   // if (!locationIsClicked)
   //   return (
@@ -134,17 +148,4 @@ function CardData() {
 //       </div> */}
 //     </>
 //   );
-return (
-  <div className="cards__container">
-    {newDataJs.map(appart => <Link key={appart.id} to={`/appart/${appart.id}`} style={{"display": "block"} } className="card">
-      <section className="card__content">
-        <div className="card__shadow"></div>
-        <h3 className="card__title" >{appart.title}</h3>
-        <img src={appart.cover} alt={`${appart.title}, proposé par ${appart.host.name} `} className="card__image" />
-      </section>
-      </Link>)}
-  </div>
-)
-}
 
-export default CardData;
